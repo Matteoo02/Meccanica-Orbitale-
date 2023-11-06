@@ -89,12 +89,34 @@ plot3(X2,Y2,Z2);
 
 i6 = 1.4840;
 OM6 = 2.7570;
+
 % w2 da calcoli su quaderno
 [Xp2,Yp2,Zp2,X2,Y2,Z2] = plotOrbit(a2,e2,i6,OM,deg2rad(w),theta_tot);
 Terra3d;
 plot3(X2,Y2,Z2);
 hold on
-[Xp2,Yp2,Zp2,X2,Y2,Z2] = plotOrbit(a2,e2,i6,OM6,deg2rad(50),theta_tot);
+
+%%
+% parametri cambio piano, caso D_i > 0, D_OM > 0
+i_i = deg2rad(in); i_f = i6;    D_i = i_f-i_i;
+OM_i = deg2rad(OM); OM_f = OM6;  D_OM = OM_f-OM_i; 
+w = deg2rad(w);
+alpha = acos(cos(i_i)*cos(i_f)+sin(i_i)*sin(i_f)*cos(D_OM));
+% Calcolo u_i
+cos_ui = (cos(alpha)*cos(i_i)-cos(i_f))/(sin(alpha)*sin(i_i));
+sin_ui = sin(i_f)*sin(D_OM)/sin(alpha);
+u_i = atan2(sin_ui,cos_ui);
+% Calcolo u_f
+cos_uf = (cos(alpha)*cos(i_f)-cos(i_i))/(sin(alpha)*sin(i_f));
+sin_uf = -sin(i_i)*sin(D_OM)/sin(alpha);
+u_f = atan2(sin_uf,cos_uf);
+% Calcolo parametri orbite
+th_man_1 = u_i-w;
+th_man_2 = th_man_1;
+w2 = u_f - th_man_2 + 2*pi;
+
+
+[Xp2,Yp2,Zp2,X2,Y2,Z2] = plotOrbit(a2,e2,i6,OM6,w2,theta_tot);
 plot3(X2,Y2,Z2);
 
 
