@@ -1,10 +1,4 @@
 %Prova finale
-%% MINELLI CIAO
-%% Ok ti vedo, ma tu lo vedi in automatico??
-%Dati:
-%% PROVAAAAA
-
-%Ciao ciao 
 
 r = [-7663.5213,-6485.4986,-2201.1930];
 v = [3.5150,-2.9160,-3.8140];
