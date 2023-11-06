@@ -1,5 +1,6 @@
 %Prova finale
 %% MINELLI CIAO
+%% Ok ti vedo, ma tu lo vedi in automatico??
 %Dati:
 
 r = [-7663.5213,-6485.4986,-2201.1930];
