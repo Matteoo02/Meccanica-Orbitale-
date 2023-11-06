@@ -1,4 +1,5 @@
 %Prova finale
+%% MINELLI CIAO
 %Dati:
 
 r = [-7663.5213,-6485.4986,-2201.1930];
